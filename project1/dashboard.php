@@ -8,9 +8,9 @@
 </head>
 <body>
     <div>
-        <nav class="navbar navbar-light bg-dark">
-            <h1 class="p-3 mx-auto text-light">Dashboard</h1>
-        </nav>
+        <?php
+        include("navbar.php");
+        ?>
         <div class="p-5 bg-light">
             <p>User has logged in</p>
         </div>

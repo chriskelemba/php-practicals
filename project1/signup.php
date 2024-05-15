@@ -20,7 +20,11 @@
         </div>
         <div class="form-group">
             <label>Password:</label></br>
-            <input type="password" name="password" class="form-control" placeholder="Enter your password" required/></br></br>
+            <input type="password" name="confirmPassword" class="form-control" placeholder="Enter a password" required/></br></br>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password:</label></br>
+            <input type="password" name="password" class="form-control" placeholder="Confirm your password" required/></br></br>
         </div>
         <button type="submit" name="submit" class="btn btn-primary" value="Sign Up">Sign Up</button>
     </form>
