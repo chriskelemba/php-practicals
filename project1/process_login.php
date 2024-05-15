@@ -2,8 +2,8 @@
 include("connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
+    $username = trim($_POST["username"]);
+    $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
 
     $stmt = $conn -> prepare("SELECT * FROM users WHERE username = ? AND email = ?");
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Invalid username/password";
         }
     } else {
-        echo "Invalid username or password.";
+        echo "User not found.";
     }
 }
 
