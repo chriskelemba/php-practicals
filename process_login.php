@@ -11,7 +11,7 @@ $stmt -> execute();
 $result = $stmt->get_result();
 
 if ($result -> num_rows > 0) {
-    echo "Login successful.";
+    header('Location: dashboard.php');
 } else {
     echo "Invalid username or password.";
 }
