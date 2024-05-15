@@ -11,12 +11,13 @@ if ($password !== $confirmPassword) {
     exit;
 }
 
-$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
 
 if (mysqli_query($conn, $sql)) {
     header('Location: login.php');
+    exit;
 } else {
     echo "An error has occured: " .mysqli_error($conn);
 }
