@@ -8,13 +8,10 @@ if (isset($_POST["userID"])) {
     $stmt -> bind_param("i", $userID);
     $stmt -> execute();
 
-    $result = $stmt -> get_result();
-    $user = $result -> fetch_assoc();
-
     header("location: success_deleteuser.php");
+
+    $conn -> close();
 } else {
     echo "Error: User ID not found";
 }
-
-$conn -> close();
 ?>

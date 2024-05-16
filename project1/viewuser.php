@@ -53,7 +53,8 @@
                         </form>
                     </td>
                     <td>
-                        <form action="" method="post">
+                        <form action="process_deleteuser.php" method="post">
+                        <input type="hidden" name="userID" value="<?= $row["userID"];?>">
                             <button class="btn btn-danger">Delete</button>
                         </form>
                     </td>
