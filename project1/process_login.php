@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: dashboard.php");
             exit;
         } else {
-            echo "Invalid username/password";
+            header('Location: error_login.php');
         }
     } else {
-        echo "User not found.";
+        header('location: error_user.php');
     }
 }
 
