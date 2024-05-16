@@ -12,6 +12,20 @@
         include("navbar.php");
         include("process_viewusers.php");
         ?>
+        <div class="w-25 my-5 mx-auto">
+            <form class="form-inline my-2 my-lg-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-success my-2 my-sm-0 text-center" type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
         <table class="table w-75 mx-auto mt-5">
             <thead class="thead-dark">
                 <tr>
