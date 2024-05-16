@@ -1,8 +1,8 @@
 <?php
 include("connection.php");
 
-if (isset($_POST['userID'])) {
-    $userID = $_POST['userID'];
+if (isset($_POST["userID"])) {
+    $userID = $_POST["userID"];
 
     $stmt = $conn -> prepare("SELECT * FROM users WHERE userID = ?");
     $stmt -> bind_param("i", $userID);
@@ -15,6 +15,7 @@ if (isset($_POST['userID'])) {
     ?>
     <form action="process_updateuser.php" method="post" class="p-5 w-50 mx-auto">
         <legend>Edit User</legend>
+        <input type="hidden" name="userID" value="<?= $userID;?>">
         <div class="form-group mt-5">
             <label>Username:</label>
             <input type="text" name="username" class="form-control" value="<?= $user["username"];?>">
@@ -33,7 +34,7 @@ if (isset($_POST['userID'])) {
                 <option value="Teacher">Teacher</option>
             </select>
         </div>
-        <button class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
     <?php
 } else {
