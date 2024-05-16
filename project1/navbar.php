@@ -9,7 +9,7 @@
         <a class="nav-link text-light" href="adduser.php">Add User</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="dashboard.php">View All Users</a>
+        <a class="nav-link text-light" href="viewuser.php">View All Users</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-light" href="aboutus.php">Update User Information</a>
