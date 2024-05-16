@@ -8,13 +8,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirmPassword = trim($_POST["confirmPassword"]);
 
     if ($password !== $confirmPassword) {
-        echo "Password does not match";
+        header('Location: error_signup.php');
         exit;
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
+    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
     
     if (mysqli_query($conn, $sql)) {
         header('Location: login.php');

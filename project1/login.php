@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Login Form -->
-    <form action="process_login.php" method="post" class="p-5 w-50 mx-auto">
+    <form action="process_login_nohash.php" method="post" class="p-5 w-50 mx-auto">
         <legend>Log In</legend>
         <div class="form-group mt-5">
             <label>Username:</label></br>
