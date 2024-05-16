@@ -33,6 +33,8 @@
                     <th scope="col">Username</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +46,17 @@
                     <td><?php echo $row["username"];?></td>
                     <td><?php echo $row["email"];?></td>
                     <td><?php echo $row["role"];?></td>
+                    <td>
+                        <form action="process_edituser.php" method="post">
+                        <input type="hidden" name="userID" value="<?= $row["userID"];?>">
+                            <button class="btn btn-primary">Edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="" method="post">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 <?php
                 }
