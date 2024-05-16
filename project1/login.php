@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Login Form -->
-    <form action="process_login.php" method="post" class="p-5 w-50 mx-auto">
+    <form action="process_login_nohash.php" method="post" class="p-5 w-50 mx-auto">
         <legend>Log In</legend>
         <div class="form-group mt-5">
             <label>Username:</label></br>
@@ -22,7 +22,7 @@
             <label>Password:</label></br>
             <input type="password" name="password" class="form-control" placeholder="Enter your password" required/></br></br>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary" value="Sign Up">Log In</button>
+        <button type="submit" name="submit" class="btn btn-primary mx-auto" value="Sign Up">Log In</button>
     </form>
 </body>
 </html>

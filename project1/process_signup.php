@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
+    $sql = "INSERT INTO accounts (username, email, password) VALUES ('$username', '$email', '$password')";
     
     if (mysqli_query($conn, $sql)) {
         header('Location: login.php');
