@@ -16,7 +16,7 @@
         <a class="nav-link text-light" href="signup.php">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="login.php">Login</a>
+        <a class="nav-link text-light" href="logout.php">Logout</a>
       </li>
     </ul>
   </div>

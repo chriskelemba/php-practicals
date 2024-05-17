@@ -1,3 +1,10 @@
+<?php
+include("connection.php");
+session_start();
+if(!isset($_SESSION["username"])){
+    header("location: login.php");
+} else {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,3 +44,6 @@
     </div>
 </body>
 </html>
+<?php
+}
+?>

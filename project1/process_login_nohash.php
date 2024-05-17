@@ -11,6 +11,8 @@ $stmt -> execute();
 $result = $stmt -> get_result();
 
 if ($result -> num_rows > 0) {
+    session_start();
+    $_SESSION["username"] = $username;
     header('Location: dashboard.php');
 } else {
     header('Location: error_login.php');
