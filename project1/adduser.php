@@ -24,8 +24,8 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect2">Role:</label>
-            <select class="form-control" name="role" id="exampleFormControlSelect2">
-                <option>Please select a value</option>
+            <select class="form-control" name="role" id="exampleFormControlSelect2" required>
+                <option value="">Please select a value</option>
                 <option value="Doctor">Doctor</option>                       
                 <option value="Medic">Medic</option>
                 <option value="Pilot">Pilot</option>

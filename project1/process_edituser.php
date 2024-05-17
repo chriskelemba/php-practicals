@@ -18,16 +18,16 @@ if (isset($_POST["userID"])) {
         <input type="hidden" name="userID" value="<?= $userID;?>">
         <div class="form-group mt-5">
             <label>Username:</label>
-            <input type="text" name="username" class="form-control" value="<?= $user["username"];?>">
+            <input type="text" name="username" class="form-control" value="<?= $user["username"];?>" required>
         </div>
         <div class="form-group mt-5">
             <label>Email:</label>
-            <input type="email" name="email" class="form-control" value="<?= $user["email"];?>">
+            <input type="email" name="email" class="form-control" value="<?= $user["email"];?>" required>
         </div>
         <div class="form-group my-5">
             <label for="exampleFormControlSelect2">Role:</label>
-            <select class="form-control" name="role" id="exampleFormControlSelect2">
-                <option>Please select a value</option>
+            <select class="form-control" name="role" id="exampleFormControlSelect2" required>
+                <option value="">Please select a value</option>
                 <option value="Doctor">Doctor</option>                       
                 <option value="Medic">Medic</option>
                 <option value="Pilot">Pilot</option>
