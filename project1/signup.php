@@ -26,7 +26,9 @@
             <label>Confirm Password:</label></br>
             <input type="password" name="password" class="form-control" placeholder="Confirm your password" required/></br></br>
         </div>
+        <input type="hidden" name="role" value="User"/>
         <button type="submit" name="submit" class="btn btn-primary" value="Sign Up">Sign Up</button>
+        <p class="pt-4">Already have an account?<a href="login.php" class="btn btn-link">Login</a></p>
     </form>
 </body>
 </html>

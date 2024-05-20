@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $role = trim($_POST["role"]);
 
-    $sql = "INSERT INTO users (username, email, role) VALUES ('$username', '$email', '$role')";
+    $sql = "INSERT INTO accounts (username, email, role) VALUES ('$username', '$email', '$role')";
     
     if (mysqli_query($conn, $sql)) {
         header('Location: success_adduser.php');

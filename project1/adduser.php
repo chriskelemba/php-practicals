@@ -1,9 +1,9 @@
 <?php
 include("connection.php");
 session_start();
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["email"]) && $_SESSION["role"] == "Admin") {
     header("location: login.php");
-} else {
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,10 +33,8 @@ if(!isset($_SESSION["username"])){
             <label for="exampleFormControlSelect2">Role:</label>
             <select class="form-control" name="role" id="exampleFormControlSelect2" required>
                 <option value="">Please select a value</option>
-                <option value="Doctor">Doctor</option>                       
-                <option value="Medic">Medic</option>
-                <option value="Pilot">Pilot</option>
-                <option value="Teacher">Teacher</option>
+                <option value="Doctor">User</option>                       
+                <option value="Medic">Admin</option>
             </select>
         </div>
         <button type="submit" name="submit" class="btn btn-primary mx-auto mt-5">Add User</button>
@@ -44,6 +42,3 @@ if(!isset($_SESSION["username"])){
     </div>
 </body>
 </html>
-<?php
-}
-?>

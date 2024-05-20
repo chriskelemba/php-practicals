@@ -7,7 +7,7 @@ if(isset($_POST["userID"]) && isset($_POST["username"]) && isset($_POST["email"]
     $email = trim($_POST["email"]);
     $role = trim($_POST["role"]);
 
-    $sql = "UPDATE users SET username = ?, email = ?, role = ? WHERE userID = ?";
+    $sql = "UPDATE accounts SET username = ?, email = ?, role = ? WHERE userID = ?";
 
     $stmt = $conn -> prepare($sql);
     $stmt -> bind_param("sssi", $username, $email, $role, $userID);

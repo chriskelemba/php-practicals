@@ -4,7 +4,7 @@ include("connection.php");
 if (isset($_POST["userID"])) {
     $userID = $_POST["userID"];
 
-    $stmt = $conn -> prepare("SELECT * FROM users WHERE userID = ?");
+    $stmt = $conn -> prepare("SELECT * FROM accounts WHERE userID = ?");
     $stmt -> bind_param("i", $userID);
     $stmt -> execute();
 
@@ -28,10 +28,8 @@ if (isset($_POST["userID"])) {
             <label for="exampleFormControlSelect2">Role:</label>
             <select class="form-control" name="role" id="exampleFormControlSelect2" required>
                 <option value="">Please select a value</option>
-                <option value="Doctor">Doctor</option>                       
-                <option value="Medic">Medic</option>
-                <option value="Pilot">Pilot</option>
-                <option value="Teacher">Teacher</option>
+                <option value="Doctor">User</option>                       
+                <option value="Medic">Admin</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>

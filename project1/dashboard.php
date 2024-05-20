@@ -1,9 +1,9 @@
 <?php
 include("connection.php");
 session_start();
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["email"])) {
     header("location: login.php");
-} else {
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,3 @@ if(!isset($_SESSION["username"])){
     </div>
 </body>
 </html>
-<?php
-}
-?>

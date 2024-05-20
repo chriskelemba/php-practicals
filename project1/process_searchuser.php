@@ -3,7 +3,7 @@ include("connection.php");
 
 $username = trim($_POST['search']);
 
-$stmt = $conn -> prepare("SELECT * FROM users WHERE username = ?");
+$stmt = $conn -> prepare("SELECT * FROM accounts WHERE username = ?");
 $stmt -> bind_param("s", $username);
 $stmt -> execute();
 $result = $stmt -> get_result();
