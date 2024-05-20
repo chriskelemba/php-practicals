@@ -1,7 +1,7 @@
 <?php
 $email = $_SESSION["email"];
-$query = "SELECT username FROM users WHERE email = '$email'";
-$result = mysqli_query($conn, $query);
+$sql = "SELECT username FROM accounts WHERE email = '$email'";
+$result = mysqli_query($conn, $sql);
 $user = mysqli_fetch_assoc($result);
 $username = $user["username"];
 ?>

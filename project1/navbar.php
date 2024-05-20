@@ -13,9 +13,6 @@
         <a class="nav-link text-light" href="viewuser.php">Manage Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="signup.php">Sign Up</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link text-light" href="logout.php">Logout</a>
       </li>
     </ul>

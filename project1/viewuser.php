@@ -47,6 +47,7 @@ if(!isset($_SESSION["email"]) || $_SESSION["role"] != "Admin") {
             <tbody>
                 <tr>
                     <?php
+                    include("pagination.php");
                     while($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <td><?php echo $row["userID"];?></td>
@@ -68,6 +69,9 @@ if(!isset($_SESSION["email"]) || $_SESSION["role"] != "Admin") {
                 </tr>
                 <?php
                 }
+                for($page = 1; $page <= $number_of_page; $page++) {  
+                    echo '<a class="px-5 text-center" href = "viewuser.php?page=' . $page . '">' . $page . ' </a>';  
+                }  
                 ?>
             </tbody>
         </table>

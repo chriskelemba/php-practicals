@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = trim($_POST["password"]);
 
     $stmt = $conn -> prepare("SELECT * FROM accounts WHERE email = ?");
-    $stmt -> bind_param("ss", $username, $email);
+    $stmt -> bind_param("s", $email);
     $stmt -> execute();
     $result = $stmt -> get_result();
 
