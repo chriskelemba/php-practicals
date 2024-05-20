@@ -4,6 +4,7 @@ session_start();
 if(!isset($_SESSION["email"])) {
     header("location: login.php");
 }
+include("userprofile.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ if(!isset($_SESSION["email"])) {
         ?>
         <div class="p-5 text-center bg-dark" style="height: 1000px;">
             <div class="mt-10 text-light">
-                <h1 class="m-5">Welcome to the dashboard</h1>
+                <h1 class="m-5">Hello, <?php echo $username; ?>.</h1>
                 <p>This dashboard handles users. It can add, edit and delete users, all in a nice and simple design.</p>
                 <form action="viewuser.php">
                     <button type="submit" class="btn btn-secondary m-3 p-2 px-5">Enter Dashboard</button>
