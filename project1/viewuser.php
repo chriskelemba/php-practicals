@@ -1,8 +1,8 @@
 <?php
 include("connection.php");
 session_start();
-if(!isset($_SESSION["email"])) {
-    header("location: login.php");
+if(!isset($_SESSION["email"]) || $_SESSION["role"] != "Admin") {
+    header("location: error_noaccess.php");
 }
 ?>
 <!DOCTYPE html>

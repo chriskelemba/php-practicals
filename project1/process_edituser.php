@@ -28,8 +28,8 @@ if (isset($_POST["userID"])) {
             <label for="exampleFormControlSelect2">Role:</label>
             <select class="form-control" name="role" id="exampleFormControlSelect2" required>
                 <option value="">Please select a value</option>
-                <option value="Doctor">User</option>                       
-                <option value="Medic">Admin</option>
+                <option value="User">User</option>                       
+                <option value="Admin">Admin</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>

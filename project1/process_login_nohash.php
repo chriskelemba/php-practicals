@@ -10,9 +10,13 @@ $stmt -> execute();
 $result = $stmt -> get_result();
 
 if ($result -> num_rows > 0) {
+    $row = $result -> fetch_assoc();
+    $role = $row["role"];
+
     session_start();
     $_SESSION["email"] = $email;
-    $_SESSION["role"] = "Admin";
+    $_SESSION["role"] = $role;
+
     header('Location: dashboard.php');
 } else {
     header('Location: error_login.php');
