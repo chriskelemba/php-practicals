@@ -16,6 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // Checks for password length
+    if (strlen($password) < 8) {
+        header('Location: error_passlength.php');
+        exit;
+    }
+
     // Checks whether the password matches
     if ($password !== $confirmPassword) {
         header('Location: error_signup.php');
@@ -28,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO accounts (username, email, password, role) VALUES ('$username', '$email', '$password', 'User')";
     
     if (mysqli_query($conn, $sql)) {
-        header('Location: login.php');
+        header('Location: success_signup.php');
         exit;
     } else {
         echo "An error has occured: " .mysqli_error($conn);
