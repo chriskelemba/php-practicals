@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 session_start();
-if(!isset($_SESSION["email"]) || $_SESSION["role"] != "Admin") {
+if(!isset($_SESSION["email"])) {
     header("location: error_noaccess.php");
 }
 ?>
@@ -35,34 +35,27 @@ if(!isset($_SESSION["email"]) || $_SESSION["role"] != "Admin") {
         <table class="table w-75 mx-auto mt-5">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">User ID</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Edit</th>
-                    <th scope="col">Delete</th>
+                    <th scope="col">Job ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Posted By</th>
+                    <th scope="col">View</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <?php
-                    include("pagination_user.php");
+                    include("pagination_job.php");
                     while($row = mysqli_fetch_assoc($result)) {
                     ?>
-                    <td><?php echo $row["userID"];?></td>
-                    <td><?php echo $row["username"];?></td>
-                    <td><?php echo $row["email"];?></td>
-                    <td><?php echo $row["role"];?></td>
+                    <td><?php echo $row["jobID"];?></td>
+                    <td><?php echo $row["title"];?></td>
+                    <td><?php echo $row["description"];?></td>
+                    <td><?php echo $row["posted_by"];?></td>
                     <td>
                         <form action="process_edituser.php" method="post">
-                        <input type="hidden" name="userID" value="<?= $row["userID"];?>">
-                            <button class="btn btn-primary">Edit</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="confirm_deleteuser.php" method="post">
-                        <input type="hidden" name="userID" value="<?= $row["userID"];?>">
-                            <button class="btn btn-danger">Delete</button>
+                        <input type="hidden" name="jobID" value="<?= $row["jobID"];?>">
+                            <button class="btn btn-primary">View</button>
                         </form>
                     </td>
                 </tr>

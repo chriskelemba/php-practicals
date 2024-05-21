@@ -6,6 +6,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link text-light" href="viewjob.php">View Jobs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="addjob.php">Add Jobs</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link text-light" href="adduser.php">Add User</a>
       </li>
@@ -13,7 +19,7 @@
         <a class="nav-link text-light" href="viewuser.php">Manage Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="logout.php">Logout</a>
+        <a class="bg-danger rounded nav-link text-light" href="logout.php">Logout</a>
       </li>
     </ul>
   </div>
