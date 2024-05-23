@@ -5,9 +5,7 @@ interface Animal {
 
 // Class definitions
 class Cat implements Animal {
-  public function makeSound() {
-    echo " Meow ";
-  }
+
 }
 
 class Dog implements Animal {

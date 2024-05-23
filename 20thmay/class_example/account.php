@@ -3,16 +3,15 @@
 // Parent
 class Account {
     // Properties
-    public $account_no = 4356788765646568;
-    public $account_name = "John Doe";
-    
-    // Methods
-    public function get_account_no() {
-        echo $this -> account_no; // Object Access Operator
-    }
+    public $account_no;
+    public $account_name;
 }
 
-// Create an object
-$account = new Account();
-$account -> get_account_no();
-?>
+class Savings_account extends Account {
+    public $rate;
+
+    public function _construct($account_no, $account_name, $rate);
+}
+
+$saving_account = new SavingAccount("1234565434567", "John Doe");
+$saving_account -> get
