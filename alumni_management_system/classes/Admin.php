@@ -3,7 +3,8 @@ require_once 'User.php';
 
 class Admin extends User
 {
-    protected $table_name = "users";
+    protected $table_name_users = "users";
+    protected $table_name_jobs = "jobs";
 
     public function addAlumni($alumniData)
     {
@@ -26,7 +27,7 @@ class Admin extends User
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
         // Insert into database
-        $query = "INSERT INTO " . $this->table_name . " (username, email, password) VALUES (:username, :email, :password)";
+        $query = "INSERT INTO " . $this->table_name_users . " (username, email, password) VALUES (:username, :email, :password)";
         $stmt = $this->conn->prepare($query);
 
         // Bind values
@@ -58,6 +59,28 @@ class Admin extends User
 
     public function postJob($jobData)
     {
-        // Implementation for posting job
+            // Check if required fields are set
+            if (!isset($jobData['job_title'], $jobData['job_description'])) {
+                throw new Exception("All fields are required.");
+            }
+    
+            // Sanitize input data
+            $title = htmlspecialchars(strip_tags($jobData['job_title']));
+            $description = htmlspecialchars(strip_tags($jobData['job_description']));
+    
+            // Insert into database
+            $query = "INSERT INTO " . $this->table_name_jobs . " (job_title, job_description) VALUES (:job_title, :job_description)";
+            $stmt = $this->conn->prepare($query);
+    
+            // Bind values
+            $stmt->bindParam(":job_title", $title);
+            $stmt->bindParam(":job_description", $description);
+    
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                throw new Exception("Unable to add job.");
+            }
+        }
     }
-}
+
