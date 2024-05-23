@@ -44,7 +44,12 @@ class Admin extends User
 
     public function viewAlumni()
     {
-        // Implementation for viewing alumni
+        $sql = "SELECT * FROM " . $this->table_name_users;
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $result;
     }
 
     public function updateAlumni($alumniId, $alumniData)

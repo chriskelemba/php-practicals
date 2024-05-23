@@ -6,6 +6,7 @@ $database = new Database();
 $db = $database->getConnection();
 
 $admin = new Admin($db);
+$viewAlumni = $admin -> viewAlumni($db);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['add_alumni'])) {
@@ -46,6 +47,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="job_description" placeholder="Job Description" required>
         <button type="submit" name="post_job">Post Job</button>
     </form>
+    <?php
+    if (!empty($viewAlumni)) {
+        foreach ($viewAlumni as $alumni) {
+            echo $alumni['username'] . ' - ' . $alumni['email'] . '<br>';
+        }
+    } else {
+        echo 'No alumni found.';
+    }
+    ?>
 </body>
 
 </html>
