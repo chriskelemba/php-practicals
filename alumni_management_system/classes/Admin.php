@@ -65,21 +65,23 @@ class Admin extends User
     public function postJob($jobData)
     {
             // Check if required fields are set
-            if (!isset($jobData['job_title'], $jobData['job_description'])) {
+            if (!isset($jobData['job_title'], $jobData['job_description'], $jobData['job_location'])) {
                 throw new Exception("All fields are required.");
             }
     
             // Sanitize input data
             $title = htmlspecialchars(strip_tags($jobData['job_title']));
             $description = htmlspecialchars(strip_tags($jobData['job_description']));
+            $location = htmlspecialchars(strip_tags($jobData['job_location']));
     
             // Insert into database
-            $query = "INSERT INTO " . $this->table_name_jobs . " (job_title, job_description) VALUES (:job_title, :job_description)";
+            $query = "INSERT INTO " . $this->table_name_jobs . " (job_title, job_description, job_location, job_status) VALUES (:job_title, :job_description, :job_location, 'Approved')";
             $stmt = $this->conn->prepare($query);
     
             // Bind values
             $stmt->bindParam(":job_title", $title);
             $stmt->bindParam(":job_description", $description);
+            $stmt->bindParam(":job_location", $location);
     
             if ($stmt->execute()) {
                 return true;
@@ -87,5 +89,15 @@ class Admin extends User
                 throw new Exception("Unable to add job.");
             }
         }
+
+    public function viewJobs()
+    {
+        $sql = "SELECT * FROM " . $this->table_name_jobs;
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $result;
     }
+}
 

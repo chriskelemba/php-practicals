@@ -8,6 +8,8 @@ class Job {
     }
 
     public function createJob($jobData) {
+        
+    }
 
     public function getJobs() {
         // Implementation for retrieving all job posts
